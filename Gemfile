@@ -26,7 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# gem for driving times 
 gem 'gmaps4rails'
+# css gem
+gem 'bootstrap-sass'
+# gem for logging in with google
+gem "omniauth-google-oauth2"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
