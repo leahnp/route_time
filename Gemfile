@@ -32,6 +32,10 @@ gem 'gmaps4rails'
 gem 'bootstrap-sass'
 # gem for logging in with google
 gem "omniauth-google-oauth2"
+# something I need?
+gem 'omniauth-oauth2', '~> 1.3.1'
+# sign in with 3rd party api
+gem "omniauth"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
