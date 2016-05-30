@@ -24,7 +24,7 @@ class RoutesController < ApplicationController
   def get_data
     data = GoogleDirectionsApiWrapper.search
     @time = data["routes"][0]["legs"][0]["duration"]["text"]
-    raise
+    render :show
   end
 
   private
