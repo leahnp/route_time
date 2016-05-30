@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'sessions#new'
-     # get    'login'   => 'sessions#new'
-  # login with spotify
+  root 'routes#new'
+
+  # login with google plus
+  get    'login'   => 'sessions#new', as: :login
   get "/auth/:provider/callback" => "sessions#create"
   delete 'logout'  => 'sessions#destroy', as: :logout
 
