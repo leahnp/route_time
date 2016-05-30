@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create"
   delete 'logout'  => 'sessions#destroy', as: :logout
 
+  # add a new location to 'my locations'
+  get 'routes/new' => 'routes#new', as: :locations
+  post '/routes/new' => 'routes#create'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

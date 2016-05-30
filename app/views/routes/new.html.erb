@@ -4,6 +4,7 @@
 <%= form_for @location do |f| %>
   <%= f.label :"address or coordinates" %>:
   <%= f.text_field :address %><br />
+  <% f.hidden_field(:user_id, :value => current_user.id) %>
 
   <%= f.submit %>
 <% end %>
