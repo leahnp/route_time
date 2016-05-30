@@ -36,6 +36,8 @@ gem "omniauth-google-oauth2"
 gem 'omniauth-oauth2', '~> 1.3.1'
 # sign in with 3rd party api
 gem "omniauth"
+# httparty for api requests
+gem 'httparty'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
