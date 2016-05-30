@@ -7,14 +7,14 @@ module GoogleDirectionsApiWrapper
   def self.search()#(origin, destination)
     # origin string coordinatinos
     # destination address or coordinates NO SPACE BETWEEN COORDINATES
-    body_query = {
+    test = {query: {
               "origin": "47.680585,-122.323788",
               "destination": "47.687188,-122.005437"
-               }
+               }}
 
 
     @data = HTTParty.post(BASE_URL,
-    body: body_query.to_json)
+    test)
   end
   #headers: {"Content-Type" => "application/json", "Accept" => "application/json"}
 
