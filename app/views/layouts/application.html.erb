@@ -16,7 +16,7 @@
 		  		<li>Welcome <%= current_user.name %>!</li>
 		  		<li><%= image_tag(current_user.photo) %></li>
 				<% else %> 
-	      	<li><%= link_to 'Log-in with Google+', login_path unless current_user %></li>
+	      	<li><%= link_to 'Log-in with Google+', '/auth/google' unless current_user %></li>
 	      <% end %>
 	    </div>
 	    <div id="navbar">

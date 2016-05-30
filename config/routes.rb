@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'routes#new'
 
   # login with google plus
-  get    'login'   => 'sessions#new', as: :login
+  get    'login'   => 'sessions#create', as: :login
   get "/auth/:provider/callback" => "sessions#create"
   delete 'logout'  => 'sessions#destroy', as: :logout
 
