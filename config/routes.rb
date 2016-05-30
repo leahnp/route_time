@@ -8,7 +8,7 @@ Rails.application.routes.draw do
      # get    'login'   => 'sessions#new'
   # login with spotify
   get "/auth/:provider/callback" => "sessions#create"
-  # delete 'logout'  => 'sessions#destroy'
+  delete 'logout'  => 'sessions#destroy', as: :logout
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
