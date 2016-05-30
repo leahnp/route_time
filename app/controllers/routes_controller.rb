@@ -22,7 +22,8 @@ class RoutesController < ApplicationController
 
 
   def get_data
-    # call wrapper
+    data = GoogleDirectionsApiWrapper.search
+    raise
   end
 
   private

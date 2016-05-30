@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'routes/new' => 'routes#new', as: :locations
   post '/routes/new' => 'routes#create'
 
+  # get route data from api
+  post 'routes/info' => 'routes#get_data', as: :get_data
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
