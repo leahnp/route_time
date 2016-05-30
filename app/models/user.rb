@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
     else
       user = User.new
       user.uid = auth_hash["uid"]
-      # user.provider = auth_hash["provider"]
+      user.provider = auth_hash["provider"]
       user.name = auth_hash["info"]["first_name"]
       user.photo = auth_hash["info"]["image"]
       # user.profile_link = auth_hash["info"]["urls"]["spotify"]
