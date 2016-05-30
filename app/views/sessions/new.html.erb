@@ -1,4 +1,31 @@
 <div class="jumbotron">
-  <h1>Welcome!</h1>
-  <p>Authenticate via one of the social networks to get started.</p>
+  <h1>Add New Location</h1>
+  <p>Add commonly traveled to location to your places</p>
 </div>
+  <h1>My Places</h1>
+  <!-- list all places with button to get time estimate -->
+
+
+  
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
