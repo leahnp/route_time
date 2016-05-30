@@ -23,8 +23,11 @@ class RoutesController < ApplicationController
 
   def get_data
     data = GoogleDirectionsApiWrapper.search
-    @time = data["routes"][0]["legs"][0]["duration"]["text"]
-    render :show
+    # time = data["routes"][0]["legs"][0]["duration"]["text"]
+    render :json => {
+      time: data["routes"][0]["legs"][0]["duration"]["text"]
+    }
+    # redirect_to root
   end
 
   private

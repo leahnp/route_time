@@ -11,6 +11,34 @@
   <%= f.submit %>
 <% end %>
 
+<script>
+	function getRouteTime(id, address) {
+	  if (!navigator.geolocation) {
+	    x.innerHTML = "Geolocation is not supported by this browser.";
+	    return;
+	  }
+	  
+	  navigator.geolocation.getCurrentPosition(function (position) {
+	  	getRouteTime2(id, address, position);
+	  });
+	}
+
+	function getRouteTime2(id, address, position) {
+		$.post("<%= get_data_path %>", {
+			// do something with address
+			lat: position.coords.latitude,
+			lon: position.coords.longitude
+		}, function (data) {
+			showRouteTime(id, data);
+		});
+	}
+
+	function showRouteTime(id, data) {
+		var x = document.getElementById("route_time_" + id);
+  	x.innerHTML = data.time;
+	}
+</script>
+
 <h2>My Locations</h2>
 <ul>
 	<% @my_locations.each do |location| %>
@@ -19,26 +47,10 @@
 		<%= location.address %>
 		<p>Click the button to get your estimated drive time from your current location.</p>
 
-		<button onclick="getLocation()">Get Route Time</button>
+		<button onclick="getRouteTime(<%= location.id %>, '<%= location.address %>')">Get Route Time</button>
 
-		<p id="demo"></p>
+		<p id="route_time_<%= location.id %>"></p>
 
-		<script>
-		var x = document.getElementById("demo");
-
-		function getLocation() {
-		  if (navigator.geolocation) {
-		      navigator.geolocation.getCurrentPosition(showPosition);
-		  } else { 
-		      x.innerHTML = "Geolocation is not supported by this browser.";
-		  }
-		}
-
-		function showPosition(position) {
-		  x.innerHTML = "Latitude: " + position.coords.latitude + 
-		  "<br>Longitude: " + position.coords.longitude;
-		}
-		</script>
 		<%= button_to "Test API", get_data_path %>
 	</li>
 	<% end %>
