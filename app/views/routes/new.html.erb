@@ -1,1 +1,9 @@
 <h1>Routes View</h1>
+
+<h2>Add a new location</h2>
+<%= form_for @location do |f| %>
+  <%= f.label :"address or coordinates" %>:
+  <%= f.text_field :address %><br />
+
+  <%= f.submit %>
+<% end %>
