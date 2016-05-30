@@ -29,6 +29,6 @@ class RoutesController < ApplicationController
 
    def create_params
       # params.permit(location: [:address])
-      params.permit(location: [:address])
+      params.permit(location: [:address, :name])
    end
 end
