@@ -1,3 +1,5 @@
+require_relative '../../lib/GoogleDirectionsApiWrapper'
+
 class SessionsController < ApplicationController
   def new
   end
@@ -17,5 +19,9 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     redirect_to root_path
+  end
+
+  def get_data
+    # call wrapper
   end
 end
