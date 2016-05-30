@@ -8,3 +8,12 @@
 
   <%= f.submit %>
 <% end %>
+
+<h2>My Locations</h2>
+<ul>
+	<% @my_locations.each do |location| %>
+	<li>
+		<%= location.address %>
+	</li>
+	<% end %>
+</ul>

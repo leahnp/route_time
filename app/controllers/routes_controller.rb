@@ -4,6 +4,7 @@ class RoutesController < ApplicationController
   def new
     # @user = User.find(current_user.id)
     @location = Location.new
+    @my_locations = Location.all
     # raise
   end
 
