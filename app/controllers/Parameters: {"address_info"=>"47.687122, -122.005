@@ -1,5 +1,0 @@
- Parameters: {"address_info"=>"47.687122, -122.005517", "lat"=>"47.6805423", "lon"=>"-122.3240786"}
-{"address_info"=>"47.687122, -122.005517", "lat"=>"47.6805423", "lon"=>"-122.3240786", "controller"=>"routes", "action"=>"get_data"}
-
-destination = params["address_info"].lstrip
-origin = params["lat"],params["lon"]

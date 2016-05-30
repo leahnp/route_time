@@ -2,20 +2,14 @@ require 'httparty'
 
 module GoogleDirectionsApiWrapper
   BASE_URL = "http://maps.googleapis.com/maps/api/directions/json?"
-  # outputFormat?parameters
 
   def self.search(origin, destination)
-    # origin string coordinatinos
+    # origin string coordinates or addy
     # destination address or coordinates NO SPACE BETWEEN COORDINATES
-    test = {query: {
+    q = {query: {
               "origin": origin,
               "destination": destination
                }}
-
-
-    @data = HTTParty.post(BASE_URL,
-    test)
+    @data = HTTParty.post(BASE_URL, q)
   end
-  #headers: {"Content-Type" => "application/json", "Accept" => "application/json"}
-
 end

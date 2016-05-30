@@ -49,12 +49,10 @@
 		<%= location.name %>
 		<%= location.address %>
 		<p>Click the button to get your estimated drive time from your current location.</p>
-
+		<!-- start js  -->
 		<button onclick="getRouteTime(<%= location.id %>, '<%= location.address %>')">Get Route Time</button>
-
+		<!-- generate id for specific location -->
 		<p id="route_time_<%= location.id %>"></p>
-
-		<%= button_to "Test API", get_data_path %>
 	</li>
 	<% end %>
 </ul>
