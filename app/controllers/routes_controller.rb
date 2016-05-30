@@ -26,6 +26,12 @@ class RoutesController < ApplicationController
     # redirect_to root
   end
 
+  def destroy
+    location = Location.find(params["location_id"])
+    location.destroy
+    redirect_to :root
+  end
+
   private
 
    def create_params
