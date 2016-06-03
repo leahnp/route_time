@@ -6,9 +6,12 @@ module GoogleDirectionsApiWrapper
   def self.search(origin, destination)
     # origin string coordinates or addy
     # destination address or coordinates NO SPACE BETWEEN COORDINATES
+    # departure time not specified == NOW
+    # traffic model defaults to 'best guess'
     q = {query: {
               "origin": origin,
-              "destination": destination
+              "destination": destination,
+              "duration_in_traffic": "true"
                }}
     @data = HTTParty.post(BASE_URL, q)
   end
